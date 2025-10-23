@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scouting America Troop 43G - Mighty Thoroughbreds | Versailles, KY</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #9E83C8 0%, #B1D6A3 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .troop-info {
+            text-align: right;
+            font-size: 0.9rem;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background: rgba(158, 131, 200, 0.95);
+            padding: 1rem 0;
+            position: sticky;
+            top: 80px;
+            z-index: 999;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 140px;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section:nth-child(even) {
+            background: #fff;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #9E83C8;
+        }
+
+        .section h3 {
+            color: #B1D6A3;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(158, 131, 200, 0.8), rgba(177, 214, 163, 0.8));
+            color: white;
+            text-align: center;
+            padding: 6rem 0;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #B1D6A3;
+            color: #333;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            background: #a0c690;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Meeting Info Box */
+        .meeting-info {
+            background: linear-gradient(135deg, #9E83C8, #B1D6A3);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .meeting-info h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(158, 131, 200, 0.1);
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(158, 131, 200, 0.2);
+            border-color: #B1D6A3;
+        }
+
+        .card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-icon {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #9E83C8, #B1D6A3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .stats {
+            background: linear-gradient(135deg, #9E83C8, #B1D6A3);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .stat-item {
+            padding: 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: 2rem auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #9E83C8;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e1e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #B1D6A3;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #9E83C8, #B1D6A3);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(158, 131, 200, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #B1D6A3;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #B1D6A3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .nav-menu {
+                gap: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                margin-top: 180px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-button {
+                display: block;
+                margin: 0.5rem auto;
+                text-align: center;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon"></div>
+                    <div>
+                        <h1>Troop 43G</h1>
+                        <div style="font-size: 0.9rem;">Mighty Thoroughbreds</div>
+                    </div>
+                </div>
+                <div class="troop-info">
+                    <div><strong>Scouting America</strong></div>
+                    <div>All-Girls Troop</div>
+                    <div>Versailles, Kentucky</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About Our Troop</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#join">Join Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h2>Welcome to the Mighty Thoroughbreds!</h2>
+                <p>Join our amazing all-girls Scouting America troop in Versailles, Kentucky. We're building leaders, creating adventures, and making lifelong friendships since 2024.</p>
+                <a href="#join" class="cta-button">Join Our Troop Today!</a>
+                
+                <div class="meeting-info">
+                    <h3>📅 Weekly Meetings</h3>
+                    <p><strong>When:</strong> [INSERT YOUR MEETING DAY AND TIME]</p>
+                    <p><strong>Where:</strong> [INSERT YOUR MEETING LOCATION]</p>
+                    <p><strong>Ages:</strong> Girls 11-17 years old</p>
+                    <p>Come discover what Scouting is all about!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Our Troop</h2>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>🌟 Our Story</h3>
+                        <p>Troop 43G was chartered in 2024 as an all-girls troop dedicated to the principles of Scouting America. Located in the heart of horse country in Versailles, Kentucky, we embody the spirit of our patrol name - the Mighty Thoroughbreds.</p>
+                        
+                        <p>Our troop is built on the foundation of developing confident, capable, and caring young women who are prepared to make a positive impact in their communities and beyond. We believe in adventure, leadership, and friendship.</p>
+                        
+                        <h3>🎯 Our Mission</h3>
+                        <p>To provide girls with opportunities to develop leadership skills, build character, participate in outdoor adventures, and serve their community while having fun and making lasting friendships.</p>
+                    </div>
+                    
+                    <div class="stats">
+                        <h3>Troop 43G by the Numbers</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-number">2024</span>
+                                <span>Charter Year</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">43G</span>
+                                <span>Troop Number</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">[#]</span>
+                                <span>Current Scouts</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">[#]</span>
+                                <span>Service Hours</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="activities" class="section">
+            <div class="container">
+                <h2>What We Do</h2>
+                
+                <div class="grid">
+                    <div class="card">
+                        <h3><span class="card-icon">🏕️</span>Outdoor Adventures</h3>
+                        <p>Camping, hiking, and exploring Kentucky's beautiful outdoors. Learn wilderness survival skills and develop a love for nature.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><span class="card-icon">🎖️</span>Merit Badges</h3>
+                        <p>Earn merit badges in subjects ranging from STEM and arts to outdoor skills and community service. Discover new interests and develop expertise.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><span class="card-icon">👥</span>Leadership Development</h3>
+                        <p>Take on leadership roles within the troop, plan activities, and develop the confidence to lead in any situation.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><span class="card-icon">❤️</span>Community Service</h3>
+                        <p>Make a difference in Versailles and beyond through service projects that help our community and environment.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><span class="card-icon">🐴</span>Local Heritage</h3>
+                        <p>Explore our Kentucky heritage with visits to horse farms, historical sites, and local businesses that make our community special.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><span class="card-icon">🎨</span>Skills & STEM</h3>
+                        <p>Learn practical life skills, creative arts, technology, and hands-on projects that build confidence and capability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="join" class="section" style="background: white;">
+            <div class="container">
+                <h2>Ready to Join?</h2>
+                <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">
+                    New to Scouting? We welcome girls ages 11-17 who are ready for adventure!
+                </p>
+                
+                <div class="grid" style="max-width: 800px; margin: 0 auto;">
+                    <div class="card">
+                        <h3><span class="card-icon">👋</span>Visit a Meeting</h3>
+                        <p>Come see what we're all about! Visitors are always welcome at our regular meetings.</p>
+                        <p><strong>Next Meeting:</strong> [INSERT NEXT MEETING DATE]</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><span class="card-icon">📞</span>Get Information</h3>
+                        <p>Have questions? Want to learn more? Contact our leadership team.</p>
+                        <p><strong>Contact:</strong> [INSERT EMAIL OR PHONE]</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 style="text-align: center; color: #9E83C8; margin-bottom: 1rem;">Get More Information</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="parent-name">Parent/Guardian Name</label>
+                            <input type="text" id="parent-name" name="parent-name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="scout-name">Girl's Name</label>
+                            <input type="text" id="scout-name" name="scout-name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="age">Girl's Age</label>
+                            <input type="number" id="age" name="age" min="11" max="17" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Questions or Comments</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your interests or any questions you have about joining..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Information Request</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Contact Us</h2>
+                
+                <div class="grid">
+                    <div class="card">
+                        <h3><span class="card-icon">📧</span>Get in Touch</h3>
+                        <p><strong>Scoutmaster:</strong> [INSERT SCOUTMASTER NAME]</p>
+                        <p><strong>Email:</strong> [INSERT EMAIL ADDRESS]</p>
+                        <p><strong>Phone:</strong> [INSERT PHONE NUMBER]</p>
+                        <p><strong>Meetings:</strong> [INSERT MEETING SCHEDULE]</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><span class="card-icon">📍</span>Meeting Location</h3>
+                        <p><strong>[INSERT MEETING LOCATION NAME]</strong></p>
+                        <p>[INSERT STREET ADDRESS]</p>
+                        <p>[INSERT CITY, STATE ZIP]</p>
+                        <p>Look for the Mighty Thoroughbreds banner!</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3><span class="card-icon">🌐</span>Connect Online</h3>
+                        <p>Follow us for updates and photos from our adventures:</p>
+                        <p style="margin-top: 1rem;">
+                            <a href="[INSERT FACEBOOK LINK]" target="_blank">📘 Facebook Group</a><br>
+                            <a href="[INSERT INSTAGRAM LINK]" target="_blank">📸 Instagram</a><br>
+                            <a href="https://www.scoutbook.com" target="_blank">📖 ScoutBook</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Troop 43G</h3>
+                    <p>Mighty Thoroughbreds</p>
+                    <p>Versailles, Kentucky</p>
+                    <p>Chartered 2024</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#about">About Us</a></p>
+                    <p><a href="#join">Join Our Troop</a></p>
+                    <p><a href="#activities">Activities</a></p>
+                    <p><a href="#contact">Contact</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Scouting Resources</h3>
+                    <p><a href="https://www.scouting.org" target="_blank">Scouting America</a></p>
+                    <p><a href="[INSERT COUNCIL WEBSITE]" target="_blank">[INSERT COUNCIL NAME]</a></p>
+                    <p><a href="https://www.scoutbook.com" target="_blank">Scoutbook</a></p>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid #555; padding-top: 2rem; margin-top: 2rem;">
+                <p>&copy; 2024 Scouting America Troop 43G - Mighty Thoroughbreds. All rights reserved.</p>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Building leaders, creating adventures, making friends.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Highlight active nav item on scroll
+            function highlightActiveNav() {
+                const sections = document.querySelectorAll('section[id]');
+                let current = '';
+                
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= 150 && rect.bottom >= 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightActiveNav);
+            
+            // Form submission handling
+            const form = document.getElementById('contact-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your interest! We will contact you soon with more information about joining Troop 43G.');
+                    form.reset();
+                });
+            }
+
+            // Card hover animations
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
